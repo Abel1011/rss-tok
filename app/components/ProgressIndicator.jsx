@@ -8,7 +8,7 @@ export default function ProgressIndicator({ current, total }) {
   return (
     <>
       {/* Mobile: Right side vertical */}
-      <div className="lg:hidden fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-3">
+      <div className="lg:hidden fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-3 pb-32">
         {/* Vertical Progress Bar */}
         <div className="relative h-32 w-1 rounded-full bg-white/10 overflow-hidden">
           <div 
