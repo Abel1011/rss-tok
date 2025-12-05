@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Validate Code Quality on Save",
+  "description": "When a file is saved, verifies that it only contains comments in English and removes loose console.log statements (except in error handling)",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the saved file and perform the following checks:\n1. Verify that all comments are written in English. If you find comments in other languages (especially Spanish), flag them and suggest English translations.\n2. Identify and remove any loose console.log statements that are not part of error handling (e.g., not in catch blocks or error conditions).\n3. Preserve console.log, console.error, console.warn statements that are used for error logging or debugging errors.\n4. Provide a summary of any issues found and the corrections made.\n\nIf changes are needed, provide the corrected code."
+  }
+}
